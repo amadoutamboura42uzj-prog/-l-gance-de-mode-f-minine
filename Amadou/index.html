@@ -1,0 +1,92 @@
+<!DOCTYPE html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>L’élégance féminine - Bonnets satin</title>
+<style>
+:root{--bg:#fff8f6;--tx:#2b1a1f;--ac:#b4235a;--card:#fff}
+@media(prefers-color-scheme:dark){:root{--bg:#1c1215;--tx:#f7e9ee;--ac:#ff7ab0;--card:#2a1c21}}
+*{box-sizing:border-box}
+html{scroll-behavior:smooth}
+body{margin:0;font-family:system-ui,sans-serif;background:var(--bg);color:var(--tx)}
+header{text-align:center;padding:32px 16px 8px}
+h1{margin:0;color:var(--ac);font-size:1.8rem}
+header p{margin:8px 0 0}
+nav{display:flex;flex-wrap:wrap;gap:8px;justify-content:center;padding:12px 16px}
+nav a{background:var(--card);color:var(--ac);text-decoration:none;font-size:.85rem;font-weight:600;padding:7px 12px;border-radius:20px;box-shadow:0 1px 4px #0002}
+section{max-width:1000px;margin:auto;padding:8px 16px 0}
+section h2{color:var(--ac);margin:24px 0 2px;font-size:1.3rem}
+section p.sub{margin:0;opacity:.8;font-size:.9rem}
+.grid{display:grid;grid-template-columns:repeat(auto-fill,minmax(160px,1fr));gap:14px;padding:14px 0}
+.card{background:var(--card);border-radius:14px;overflow:hidden;box-shadow:0 2px 8px #0002;display:flex;flex-direction:column}
+.card img{width:100%;aspect-ratio:1/1;object-fit:cover;background:#0001}
+.card div{padding:10px;display:flex;flex-direction:column;gap:6px;flex:1}
+.nom{font-size:.9rem}
+.prix{font-weight:700;color:var(--ac)}
+a.btn{margin-top:auto;background:#25d366;color:#fff;text-decoration:none;text-align:center;padding:9px;border-radius:8px;font-weight:600;font-size:.9rem}
+header .slogan{margin:10px 0 0;font-weight:600}
+.about{max-width:700px;margin:8px auto;padding:18px 20px;background:var(--card);border-radius:14px;box-shadow:0 2px 8px #0002}
+.about p{margin:0 0 12px;line-height:1.5}
+.about ul{list-style:none;padding:0;margin:0 0 12px;display:flex;flex-direction:column;gap:6px}
+.about .actions{display:flex;flex-wrap:wrap;gap:10px;margin-top:14px}
+.about .actions a,.about .actions button{flex:1;min-width:200px;border:0;cursor:pointer;font:inherit;font-weight:600;font-size:.95rem;text-align:center;text-decoration:none;padding:11px;border-radius:8px}
+.about .cmd{background:#25d366;color:#fff}
+.about .share{background:transparent;color:var(--ac);border:2px solid var(--ac)!important}
+.cit{text-align:center;max-width:700px;margin:28px auto 0;padding:0 16px;font-weight:600;color:var(--ac)}
+footer{text-align:center;padding:24px;font-size:.85rem;opacity:.7}
+</style>
+</head>
+<body>
+<header>
+<h1 id="shop"></h1>
+<p class="slogan">✨ Mes bonnets et chouchous, votre touche d’élégance ! 👒💖</p>
+<p>Bonnets et chouchous en satin · Commande sur WhatsApp</p>
+</header>
+<nav id="nav"></nav>
+<div class="about">
+<p>Les belles dames, vous méritez de briller ! 😍✨</p>
+<p>Envie d’ajouter une touche d’élégance, de féminité et d’originalité à vos tenues ? 💃🏽💕</p>
+<p>Craquez pour nos magnifiques bonnets et chouchous, confectionnés avec soin pour vous aider à vous démarquer et à révéler votre beauté. 🥰</p>
+<ul>
+<li>👒 Élégants et tendance</li>
+<li>💖 Pour vos sorties, cérémonies et occasions spéciales</li>
+<li>✨ Pour les femmes qui aiment être belles et raffinées</li>
+<li>🧵 Des créations réalisées avec amour et passion</li>
+</ul>
+<p>Ne passez pas inaperçue quand vous pouvez vous démarquer avec élégance ! ❤️</p>
+<div class="actions">
+<a class="cmd" id="cmd" href="#">📩 Commander sur WhatsApp</a>
+<button class="share" id="share" type="button">📲 Partager la boutique</button>
+</div>
+</div>
+<main id="m"></main>
+<p class="cit">La beauté se remarque, mais l’élégance se distingue. 👑✨</p>
+<footer>Commande et paiement par WhatsApp (Mobile Money ou à la livraison)</footer>
+<script>
+// ====== A MODIFIER ======
+const BOUTIQUE = "L’élégance féminine";
+const WHATSAPP = "22665474185"; // numéro avec l'indicatif, sans + ni espaces
+// ========================
+document.getElementById('cmd').href='https://wa.me/'+WHATSAPP+'?text='+encodeURIComponent('Bonjour, je suis intéressée par vos créations.');
+document.getElementById('share').addEventListener('click',()=>{
+  const txt='Découvre la boutique '+BOUTIQUE+' : '+location.href;
+  if(navigator.share){navigator.share({title:BOUTIQUE,text:'Découvre la boutique '+BOUTIQUE,url:location.href}).catch(()=>{});}
+  else{window.open('https://wa.me/?text='+encodeURIComponent(txt),'_blank');}
+});
+const SECTIONS = [{"id": "double", "title": "Bonnets double face", "prix": "1500 FCFA", "desc": "Satin double face · élastique", "items": [["double-01.jpg", "Rouge / blanc"], ["double-02.jpg", "Beige doré / vert foncé"], ["double-03.jpg", "Bordeaux / rose"], ["double-04.jpg", "Bleu roi / jaune"], ["double-05.jpg", "Orange / bleu"], ["double-06.jpg", "Violet / gris"], ["double-07.jpg", "Lavande / rose"], ["double-08.jpg", "Moutarde / fuchsia"], ["double-09.jpg", "Noir / rose"], ["double-10.jpg", "Bleu ciel / rose"], ["double-11.jpg", "Mauve / violet foncé"], ["double-12.jpg", "Lilas clair / rose"], ["double-13.jpg", "Fuchsia / jaune"], ["double-14.jpg", "Marron clair / noir"], ["double-15.jpg", "Cuivre / crème"], ["double-16.jpg", "Violet foncé / lilas"], ["double-17.jpg", "Bleu turquoise / vieux rose"]]}, {"id": "bandeau", "title": "Bonnets à bandeau · 3 façons de les porter", "prix": "2000 FCFA", "desc": "Satin double face · bandeau élastique", "items": [["bandeau-01.jpg", "Noir / rose fuchsia"], ["bandeau-02.jpg", "Vert foncé / turquoise"], ["bandeau-03.jpg", "Noir / rose"], ["bandeau-04.jpg", "Bordeaux / menthe"], ["bandeau-05.jpg", "Violet / rose"], ["bandeau-06.jpg", "Orange / jaune"], ["bandeau-07.jpg", "Doré / rose"], ["bandeau-08.jpg", "Turquoise / jaune"], ["bandeau-09.jpg", "Bleu roi / rose"], ["bandeau-10.jpg", "Rose bonbon"], ["bandeau-11.jpg", "Gris-bleu / fuchsia"], ["bandeau-12.jpg", "Marron / corail"], ["bandeau-13.jpg", "Noir / rose clair"], ["bandeau-14.jpg", "Noir / rose"], ["bandeau-15.jpg", "Noir / violet"]]}, {"id": "elastique", "title": "Bonnets à bandeau élastique", "prix": "700 FCFA", "desc": "Satin · bandeau élastique noir", "items": [["elastique-01.jpg", "Prune"], ["elastique-02.jpg", "Lilas rosé"], ["elastique-03.jpg", "Bleu roi"]]}, {"id": "lacet", "title": "Bonnets simple face à lacet", "prix": "700 FCFA", "desc": "Satin simple face · lacet", "items": [["lacet-01.jpg", "Chocolat"], ["lacet-02.jpg", "Gris anthracite"], ["lacet-03.jpg", "Bordeaux"], ["lacet-04.jpg", "Rose clair"], ["lacet-05.jpg", "Violet lavande"], ["lacet-06.jpg", "Rose clair et framboise"], ["lacet-07.jpg", "Vert sauge"], ["lacet-08.jpg", "Bleu ardoise"], ["lacet-09.jpg", "Prune"], ["lacet-10.jpg", "Noir"], ["lacet-11.jpg", "Fuchsia"]]}, {"id": "chouchous", "title": "Chouchous en satin", "prix": "300 F l'unité", "desc": "Chouchou en satin", "items": [["chouchous-01.jpg", "Rose / marron (duo)"], ["chouchous-02.jpg", "Blanc ivoire (lot de 2)"], ["chouchous-03.jpg", "Rose clair / fuchsia (duo)"], ["chouchous-04.jpg", "Rouge, blanc, rose pâle, bordeaux (lot de 4)"], ["chouchous-05.jpg", "Violet / lilas (duo)"], ["chouchous-06.jpg", "Noir, marron, crème (lot de 3)"], ["chouchous-07.jpg", "Rose, violet, noir (lot de 3)"], ["chouchous-08.jpg", "Collection 12 couleurs"], ["chouchous-09.jpg", "Bordeaux (lot de 6)"], ["chouchous-10.jpg", "Collection 20 couleurs"], ["chouchous-11.jpg", "Collection 9 couleurs"], ["chouchous-12.jpg", "Marron, violet, jaune, bleu-vert (lot de 4)"], ["chouchous-13.jpg", "Noir / crème"], ["chouchous-14.jpg", "Blanc"], ["chouchous-15.jpg", "Rose pâle (lot de 2)"], ["chouchous-16.jpg", "Noir"]]}];
+document.getElementById('shop').textContent = BOUTIQUE;
+const nav = document.getElementById('nav'), m = document.getElementById('m');
+const esc = s => s.replace(/&/g,'&amp;').replace(/</g,'&lt;').replace(/"/g,'&quot;');
+SECTIONS.forEach(s=>{
+  nav.insertAdjacentHTML('beforeend','<a href="#'+s.id+'">'+esc(s.title.split(' · ')[0])+'</a>');
+  let cards='';
+  s.items.forEach(it=>{
+    const msg = encodeURIComponent("Bonjour, je veux commander : "+s.title.split(' · ')[0]+" - "+it[1]+" ("+s.prix+")");
+    cards+='<div class="card"><img loading="lazy" src="images/'+it[0]+'" alt="'+esc(s.title+' '+it[1])+'"><div><span class="nom">'+esc(it[1])+'</span><span class="prix">'+esc(s.prix)+'</span><a class="btn" href="https://wa.me/'+WHATSAPP+'?text='+msg+'">Commander</a></div></div>';
+  });
+  m.insertAdjacentHTML('beforeend','<section id="'+s.id+'"><h2>'+esc(s.title)+' · '+esc(s.prix)+'</h2><p class="sub">'+esc(s.desc)+'</p><div class="grid">'+cards+'</div></section>');
+});
+</script>
+</body>
+</html>
