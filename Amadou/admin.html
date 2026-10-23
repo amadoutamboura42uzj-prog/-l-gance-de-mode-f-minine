@@ -1,0 +1,11 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1"><title>Administration — L’Élégance Féminine</title><link rel="stylesheet" href="assets/styles.css"></head>
+<body><header class="site-header"><a class="brand" href="./"><span class="brand-mark">ÉF</span><span>L’Élégance Féminine<small>Administration</small></span></a><nav><a href="./">Voir la boutique</a></nav></header>
+<main class="section"><p class="eyebrow">ESPACE PRIVÉ</p><h1 style="font-size:40px">Administration</h1><p>Connecte-toi avec un compte Supabase autorisé comme administrateur. L’accès doit être protégé par les règles RLS et la table <code>admins</code>.</p>
+<div class="cart-panel" style="max-width:620px">
+<div id="admin-status" class="muted">Vérification de la configuration…</div>
+<form id="login-form"><label for="email">E-mail administrateur</label><input id="email" type="email" required autocomplete="username"><label for="password">Mot de passe</label><input id="password" type="password" required autocomplete="current-password"><button class="button full" type="submit">Se connecter</button></form>
+<button id="logout" class="button" type="button" hidden>Se déconnecter</button>
+<div id="admin-content" hidden><h2 style="font-size:28px;margin-top:25px">Produits</h2><p class="muted">Cette première version affiche le catalogue et vérifie l’accès. L’ajout/modification des produits sera activé après validation des politiques de sécurité de la base.</p><div id="admin-products"></div></div>
+</div><p class="tiny">Ne place jamais une clé <code>service_role</code> dans une page web. N’accorde pas les droits d’administration à un compte public.</p></main>
+<script src="https://cdn.jsdelivr.net/npm/@supabase/supabase-js@2"></script><script src="assets/admin.js"></script></body></html>
